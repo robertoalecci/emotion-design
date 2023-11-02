@@ -1,0 +1,15 @@
+#************************************************************************
+#In questo esempio, il progetto è nella subfolder 'emotion-design'
+#************************************************************************
+
+# Attivo RewriteEngine
+RewriteEngine On
+RewriteBase /
+
+# Rimuovo slash dalla fine dell'url
+RewriteRule (.*)/$ emotion-design/$1 [R=301,L]
+
+# Reindirizzo tutto su index.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ emotion-design/index.php/$1 [QSA,L]
