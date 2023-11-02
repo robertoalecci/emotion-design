@@ -52,6 +52,15 @@
                 $contact->setPhone($telefono);
                 //Inserisco il contatto
                 if($contact->create($contact)) {
+                    //Invio una mail
+                    $to= $contact->getEmail();
+                    $subject = 'Contatto ricevuto!';
+                    $message = 'Il contatto inserito sul sito web è stato salvato! Presto verrai ricontattato!';
+                    $headers = 'From: roberto.alecci@fisima.it' . "\r\n" .
+                        'Reply-To: roberto.alecci@fisima.it' . "\r\n" .
+                        'X-Mailer: PHP/' . phpversion();
+                    mail($to, $subject, $message, $headers);
+                    //Reindirizzo
                     Session::redirect(URL_ROOT.'/?msg_type=success&message='.urlencode('In contatto è stato inviato correttamente').'#contact-section');
                 }
             }
