@@ -48,11 +48,13 @@ a:hover { color: var(--primaryHoverColor); }
 .emotion-design-posts { padding: 0 4rem 4rem 4rem; display: flex; gap: 3rem; flex-wrap: wrap; }
 .emotion-design-posts .emotion-design-single-post { width: calc(50% - 1.5rem); }
 .emotion-design-posts .emotion-design-single-post h3 { margin: 1rem 0; }
+.emotion-design-posts .emotion-design-single-post img { height: 280px; object-fit: cover; }
 /*Posts - Mobile*/
 .emotion-design-posts #carouselPostsControls h3 { font-size: 1.2rem; margin-top: 1rem; }
 .emotion-design-posts #carouselPostsControls p { font-size: .9rem; }
-.emotion-design-posts .carousel-control-next { right: -12%; }
-.emotion-design-posts .carousel-control-prev { left: -12%; }
+.emotion-design-posts #carouselPostsControls .carousel-item img { height: 240px; object-fit: cover; }
+.emotion-design-posts .carousel-control-next img { margin-right: -5rem; }
+.emotion-design-posts .carousel-control-prev img { margin-left: -5rem; }
 /*Contatti*/
 .emotion-design-contacts { background: #F2F2F2; padding: 4rem 0; text-align: center; }
 .emotion-design-contacts form { max-width: 840px; margin: 0 auto; }

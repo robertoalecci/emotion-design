@@ -33,7 +33,7 @@
         $path_to_remove = preg_quote(URL_ROOT, '/');
 
         //Creo un'espressione regolare per rimuovere la prima occorrenza della costante
-        $pattern = '/^' .$path_to_remove.'/';
+        $pattern = '/^'.$path_to_remove.'/';
 
         //Rimuovo la prima occorrenza dell'url root dalla stringa (per ottenere il percorso richiesto)
         $request_uri_without_url_root = preg_replace($pattern, '', $request_uri, 1);
@@ -55,6 +55,7 @@
 
     //Variabili globali
     global $routeData, $viewData;
+    //Acquisisco i dati relativi al routing
     $routeData = initRoute();
 
     //Inizializzo oggetti dei controller
@@ -112,7 +113,6 @@
     
     //Rimozione di un contatto dal DB (ID del contatto come parametro)
     if($routeData->requestUri == '/admin/delete-contact' && Session::check_session()) $viewData = $ContactController->destroy($routeData->postParameters);
-
 
     /**
      * 404 
