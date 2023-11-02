@@ -69,7 +69,7 @@
     ?>
 
     <!--Mobile-->
-    <div id="carouselPostsControls" class="carousel slide d-block d-lg-none" data-ride="carousel">
+    <div id="carouselPostsControls" class="carousel slide d-block d-lg-none w-100" data-ride="carousel">
         <div class="carousel-inner">
             <?php foreach($posts as $post) { ?>
                 <?php if($countToPrint <= $maxToPrint) { ?>
